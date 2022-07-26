@@ -38,6 +38,15 @@ public class CabBookingController {
         System.out.println(findRide.getName());
 
         cabBookingService.chooseRide("Rahul", "Driver1");
+
+        int bill = cabBookingService.calculateBill("Rahul");
+        System.out.println("bill = " + bill);
+
+        Boolean status = cabBookingService.changeDriverStatus("Driver1", Boolean.FALSE);
+        System.out.println("sttaus = " + status);
+
+        Driver nand_ride = cabBookingService.findRide("Nandini", new Location(15, 6), new Location(20, 4));
+        System.out.println(nand_ride.getName());
     }
 
 }

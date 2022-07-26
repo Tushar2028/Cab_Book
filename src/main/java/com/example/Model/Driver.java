@@ -10,14 +10,12 @@ public class Driver extends User{
     private String carNumber;
     private Location location;
     private boolean available;
-//    private Vehicle vehicle;
 
     public Driver(String name, Character gender, int age, String carNumber, Location location, Boolean available){
         super(name, gender, age);
         this.carNumber = carNumber;
         this.location = location;
-        this.available = available;
-    }
+        this.available = available;    }
 
     public String getCarNumber() {
         return carNumber;

@@ -39,4 +39,16 @@ public class CabBookingService {
         return riderOnboarding.updateUserLocation(name, location);
     }
 
+    public void chooseRide(String riderName, String driverName) throws DriverNotAvailableException {
+        findRide.chooseRide(riderName, driverName);
+    }
+
+    public int calculateBill(String riderName) throws CreateException {
+        return findRide.calculateBill(riderName);
+    }
+
+    public Boolean changeDriverStatus(String driverName, Boolean status){
+        findRide.changeDriverStatus(driverName, status);
+        return status;
+    }
 }

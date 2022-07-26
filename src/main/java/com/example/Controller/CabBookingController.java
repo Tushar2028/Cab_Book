@@ -1,28 +1,43 @@
 package com.example.Controller;
 
+import com.example.Exceptions.DriverNotAvailableException;
+import com.example.Model.Driver;
 import com.example.Model.Location;
-import com.example.Service.DriverOnboarding;
-import com.example.Service.UserOnboarding;
-import com.example.exceptions.CreateException;
+import com.example.Model.Rider;
+import com.example.Service.CabBookingService;
+import com.example.Service.RiderOnboarding;
+import com.example.Exceptions.CreateException;
 
 public class CabBookingController {
 
-    public static void main(String[] args) throws CreateException {
-        UserOnboarding userOnboarding = new UserOnboarding();
-
-        userOnboarding.addUser("Abhishek", 'M', 23);
+    public static void main(String[] args) throws CreateException, DriverNotAvailableException {
+        CabBookingService cabBookingService = new CabBookingService();
+        Rider rider1 = cabBookingService.addUser("Abhishek", 'M', 23);
         Location l1 = new Location(0, 0);
-        userOnboarding.updateUserLocation("Abhishek", l1);
+        System.out.println(rider1.getName()  + " successfully registered");
+        rider1 = cabBookingService.updateUserLocation("Abhishek", l1);
+        System.out.println("user location = " + rider1.getFromLocation());
 
-        userOnboarding.addUser("Rahul", 'M', 29);
+        cabBookingService.addUser("Rahul", 'M', 29);
         Location l2 = new Location(10, 0);
-        userOnboarding.updateUserLocation("Rahul", l2);
+        cabBookingService.updateUserLocation("Rahul", l2);
 
-        userOnboarding.addUser("Nandini", 'F', 22);
+        cabBookingService.addUser("Nandini", 'F', 22);
         Location l3 = new Location(15, 6);
-        userOnboarding.updateUserLocation("Nandini", l3);
+        cabBookingService.updateUserLocation("Nandini", l3);
 
-        System.out.println("userMap = " + String.valueOf(userOnboarding.userMap));
+
+        cabBookingService.addDriver("Driver1", 'M', 22, "Swift, KA-01-12345", new Location(10, 1), Boolean.TRUE);
+
+        cabBookingService.addDriver("Driver2", 'M', 29, "Swift, KA-01-12345", new Location(11, 10), Boolean.TRUE);
+
+        cabBookingService.addDriver("Driver3", 'M', 24, "Swift, KA-01-12345", new Location(5,3), Boolean.TRUE);
+
+
+        Driver findRide = cabBookingService.findRide("Rahul", new Location(10,0), new Location(15,3));
+        System.out.println(findRide.getName());
+
+        cabBookingService.chooseRide("Rahul", "Driver1");
     }
 
 }

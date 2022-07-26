@@ -1,4 +1,4 @@
-package com.example.exceptions;
+package com.example.Exceptions;
 
 public class DriverNotFoundException extends Exception{
 

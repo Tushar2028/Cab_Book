@@ -6,47 +6,17 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Driver {
-
-    private String name;
-    private Character gender;
-    private int age;
+public class Driver extends User{
     private String carNumber;
     private Location location;
     private boolean available;
-    private Vehicle vehicle;
+//    private Vehicle vehicle;
 
     public Driver(String name, Character gender, int age, String carNumber, Location location, Boolean available){
-        this.name = name;
-        this.gender = gender;
-        this.age = age;
+        super(name, gender, age);
         this.carNumber = carNumber;
         this.location = location;
         this.available = available;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Character getGender() {
-        return gender;
-    }
-
-    public void setGender(Character gender) {
-        this.gender = gender;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public String getCarNumber() {
@@ -72,4 +42,12 @@ public class Driver {
     public void setAvailable(boolean available) {
         this.available = available;
     }
+
+//    public Vehicle getVehicle() {
+//        return vehicle;
+//    }
+//
+//    public void setVehicle(Vehicle vehicle) {
+//        this.vehicle = vehicle;
+//    }
 }

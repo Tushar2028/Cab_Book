@@ -2,11 +2,11 @@ package com.example.Model;
 
 public class Ride {
     private Driver driver;
-    private User user;
+    private Rider user;
     private Location fromLocation;
     private Location toLocation;
 
-    public Ride(Driver driver, User user, Location fromLocation, Location toLocation){
+    public Ride(Driver driver, Rider user, Location fromLocation, Location toLocation){
         this.driver = driver;
         this.user = user;
         this.fromLocation = fromLocation;
@@ -21,11 +21,11 @@ public class Ride {
         this.driver = driver;
     }
 
-    public User getRider() {
+    public Rider getRider() {
         return user;
     }
 
-    public void setRider(User user) {
+    public void setRider(Rider user) {
         this.user = user;
     }
 

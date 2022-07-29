@@ -1,10 +1,9 @@
 package com.example.Service;
 
-import com.example.Exceptions.CreateException;
-import com.example.Exceptions.DriverNotAvailableException;
 import com.example.Model.Driver;
 import com.example.Model.Location;
 import com.example.Model.Rider;
+
 
 public class CabBookingService {
     private static CabBookingService cabBookingService = null;
@@ -24,31 +23,35 @@ public class CabBookingService {
 
     private FindRide findRide = FindRide.getInstance();
 
-    public Rider addUser(String name, Character gender, int age) throws CreateException {
+    public Rider addUser(String name, Character gender, int age) {
         return riderOnboarding.addUser(name, gender, age);
     }
-    public Driver addDriver(String name, Character gender, int age, String carNumber, Location location, Boolean available) throws CreateException {
+    public Driver addDriver(String name, Character gender, int age, String carNumber, Location location, Boolean available)  {
         return riderOnboarding.addDriver(name, gender, age, carNumber, location, available);
     }
 
-    public Driver findRide(String name, Location fromLocation, Location toLocation) throws DriverNotAvailableException {
+    public Driver findRide(String name, Location fromLocation, Location toLocation) {
         return findRide.findRide(name, fromLocation, toLocation);
     }
 
-    public Rider updateUserLocation(String name, Location location) throws CreateException {
+    public Rider updateUserLocation(String name, Location location) {
         return riderOnboarding.updateUserLocation(name, location);
     }
 
-    public void chooseRide(String riderName, String driverName) throws DriverNotAvailableException {
+    public void chooseRide(String riderName, String driverName) {
         findRide.chooseRide(riderName, driverName);
     }
 
-    public int calculateBill(String riderName) throws CreateException {
+    public int calculateBill(String riderName) {
         return findRide.calculateBill(riderName);
     }
 
     public Boolean changeDriverStatus(String driverName, Boolean status){
         findRide.changeDriverStatus(driverName, status);
         return status;
+    }
+
+    public void findTotalEarning(){
+        findRide.totalEarning();
     }
 }

@@ -1,6 +1,5 @@
 package com.example.Model;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.Getter;
 import lombok.Setter;
 

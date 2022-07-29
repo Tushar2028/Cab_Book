@@ -28,7 +28,6 @@ public class CabBookingController {
 
         cabBookingService.findRide("Abhishek" , new Location(0,0),new Location(20,1));
 
-
         cabBookingService.findRide("Rahul", new Location(10,0), new Location(15,3));
 
         cabBookingService.chooseRide("Rahul", "Driver1");
@@ -42,5 +41,4 @@ public class CabBookingController {
 
         cabBookingService.findTotalEarning();
     }
-
 }

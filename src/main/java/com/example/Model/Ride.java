@@ -1,5 +1,10 @@
 package com.example.Model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Ride {
     private Driver driver;
     private Rider user;
@@ -21,11 +26,11 @@ public class Ride {
         this.driver = driver;
     }
 
-    public Rider getRider() {
+    public Rider getUser() {
         return user;
     }
 
-    public void setRider(Rider user) {
+    public void setUser(Rider user) {
         this.user = user;
     }
 

@@ -1,6 +1,7 @@
 package com.example.Controller;
 
 import com.example.Model.Location;
+import com.example.Model.Rider;
 import com.example.Service.CabBookingService;
 
 public class CabBookingController {

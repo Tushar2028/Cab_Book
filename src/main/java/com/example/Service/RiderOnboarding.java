@@ -63,4 +63,12 @@ public class RiderOnboarding {
         driverMap.put(driver.getName(), driver);
         return driver;
     }
+
+    public void updateUserDetails(String name, Rider user){
+        for(Rider rider: userMap.values()) {
+            if (rider.getName() == name) {
+                userMap.put(name, user);
+            }
+        }
+    }
 }

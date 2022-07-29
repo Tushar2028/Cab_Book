@@ -54,4 +54,8 @@ public class CabBookingService {
     public void findTotalEarning(){
         findRide.totalEarning();
     }
+
+    public void updateUser(String name, Rider user){
+        riderOnboarding.updateUserDetails(name, user);
+    }
 }
